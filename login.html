@@ -1,0 +1,36 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var password = document.getElementById('password').value;
+            var correctPassword = "admin123"; // كلمة المرور المطلوبة
+            
+            if (password === correctPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'a.html';
+            } else {
+                document.getElementById('error-message').textContent = 'كلمة المرور غير صحيحة!';
+            }
+        });
+    </script>
+</body>
+</html>

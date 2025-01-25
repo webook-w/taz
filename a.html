@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>لوحة التحكم</h1>
+        <h2>تغيير تفاصيل الفعالية</h2>
+        <form id="eventForm">
+            <input type="number" id="eventNumber" class="form-control" placeholder="رقم الفعالية (1-6)" required>
+            <input type="text" id="eventTitle" class="form-control" placeholder="عنوان الفعالية" required>
+            <input type="text" id="eventLocation" class="form-control" placeholder="مكان اقامه الفعالية" required>
+            <input type="text" id="eventImage" class="form-control" placeholder="رابط صورة الفعالية الخارجية" required>
+            <input type="text" id="eventImage1" class="form-control" placeholder="رابط صورة الفعالية 1" required>
+            <input type="text" id="eventImage2" class="form-control" placeholder="رابط صورة الفعالية 2" required>
+            <input type="text" id="eventDate" class="form-control" placeholder="تاريخ الفعالية (يوم شهر)" required>
+             <input type="text" id="eventTime" class="form-control" placeholder="وقت الفعالية" required>
+            
+            <div id="locationsPricesContainer">
+                <div class="location-price-pair">
+                    <input type="text" class="eventLocation form-control" placeholder="مكان الفعالية" required>
+                    <input type="text" class="eventPrice form-control" placeholder="سعر الفعالية" required>
+                </div>
+            </div>
+            <button type="button" id="addLocationPrice" class="btn">إضافة موقع وسعر جديد</button>
+            <br>
+            <br>
+            <br>
+
+            <button type="submit" class="btn">تحديث الفعالية</button>
+        </form>
+    </div>
+
+    <script>
+        // إعداد Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyCiXyYBXp3yz2P1ToiN1S6gBeYnu2ONZ3M",
+            authDomain: "index-c4631.firebaseapp.com",
+            databaseURL: "https://index-c4631-default-rtdb.firebaseio.com/",
+            projectId: "index-c4631",
+            storageBucket: "index-c4631.appspot.com",
+            messagingSenderId: "460910502392",
+            appId: "1:460910502392:web:6db7cfe2d4ecd49fe7b60d",
+            measurementId: "G-DQJX2M8FH0"
+        };
+
+        // تهيئة Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        document.getElementById('addLocationPrice').addEventListener('click', function() {
+            var container = document.getElementById('locationsPricesContainer');
+            var newLocationPricePair = document.createElement('div');
+            newLocationPricePair.classList.add('location-price-pair');
+            newLocationPricePair.innerHTML = `
+                <input type="text" class="eventLocation form-control" placeholder="مكان الفعالية" required>
+                <input type="text" class="eventPrice form-control" placeholder="سعر الفعالية" required>
+            `;
+            container.appendChild(newLocationPricePair);
+        });
+
+        document.getElementById('eventForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+            
+            // الحصول على القيم من المدخلات
+            var eventNumber = document.getElementById('eventNumber').value;
+            var title = document.getElementById('eventTitle').value;
+            var location = document.getElementById('eventLocation').value;
+            var imageUrl = document.getElementById('eventImage').value;
+            var image1Url = document.getElementById('eventImage1').value;
+            var image2Url = document.getElementById('eventImage2').value;
+            var date = document.getElementById('eventDate').value;
+            var time = document.getElementById('eventTime').value;
+
+            // الحصول على جميع المواقع والأسعار
+            var locations = Array.from(document.querySelectorAll('.eventLocation')).map(input => input.value);
+            var prices = Array.from(document.querySelectorAll('.eventPrice')).map(input => input.value);
+
+            // تخزين البيانات في Firebase
+            var eventData = {
+                title: title,
+                image: imageUrl,
+                image1: image1Url,
+                image2: image2Url,
+                date: date,
+                time: time,
+                location: location,
+                locations: locations,
+                prices: prices
+            };
+
+            firebase.database().ref('events/event' + eventNumber).set(eventData)
+                .then(() => {
+                    alert("تم تحديث الفعالية بنجاح!");
+                })
+                .catch((error) => {
+                    console.error("خطأ في تحديث الفعالية: ", error);
+                });
+        });
+    </script>
+</body>
+</html>
