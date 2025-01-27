@@ -50,6 +50,79 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+.snip1533 {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    color: #9e9e9e;
+    display: inline-block;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 10px;
+    margin: 35px 10px 10px;
+    max-width: 200px;
+    min-width: 250px;
+    position: relative;
+    text-align: center;
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border-top: 5px solid #2f375f;
+}
+
+.snip1533 *,
+.snip1533 *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.snip1533 figcaption {
+  padding: 13% 10% 12%;
+}
+
+.snip1533 figcaption:before {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #2f375f;
+  content: "\f10e";
+  font-family: 'FontAwesome';
+  font-size: 32px;
+  font-style: normal;
+  left: 50%;
+  line-height: 60px;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+}
+
+.snip1533 h3 {
+  color: #3c3c3c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 10px 0 5px;
+}
+
+.snip1533 h4 {
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.snip1533 blockquote {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+.testimonials {
+  text-align: center;
+
+}
             .input-error {
                 color: red;
             }
@@ -168,7 +241,7 @@
         <div class="container-md">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="index.html">
-                    <img src="https://images.ctfassets.net/vy53kjqs34an/3zOlXwzG8mnkgOFKwogIjR/dc2926e1903ec6502be10e06b8c2f19b/webook-logo.svg" />
+                    <img src="sport logo.png" />
                 </a>
                 <a class="sell-link nav-link p-lg-0 golden-color" href="https://wa.me/966565539269">بيع تذكرتك
                 </a>
@@ -229,7 +302,7 @@
             <article class="carousel slide" id="header-slider" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
                 <div class="carousel-inner">
                     <section class="carousel-item active">
-                        <img src="OsY3aK7WWxU3TNTyIyudi5xI2CbUnBUzZoraANZv.jpg" alt="header background" />
+                        <img src="banner.jpeg" alt="header background" />
                     </section>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#header-slider" data-bs-slide="prev">
@@ -495,6 +568,47 @@
                 </article>
             </div>
         </section>
+        <div class="testimonials">
+            <figure class="snip1533">
+                <figcaption>
+                  <blockquote>
+                    <p>
+                        "تجربتي مع تيكت سبورت كانت رائعة! عملية الحجز كانت سلسة وسريعة، وخدمة العملاء كانت متجاوبة جدًا مع استفساراتي."</p>
+                  </blockquote>
+                  <h3>أحمد القحطاني:</h3>
+                </figcaption>
+              </figure>
+              <figure class="snip1533">
+                <figcaption>
+                  <blockquote>
+                    <p>"أفضل متجر تعاملت معه للحصول على تذاكر الفعاليات. أحببت طريقة عرض التذاكر والأسعار تنافسية جدًا."</p>
+                  </blockquote>
+                  <h3>نورة الشمري:
+                </h3>
+                </figcaption>
+              </figure>
+              <figure class="snip1533">
+                <figcaption>
+                  <blockquote>
+                    <p>"الخدمة ممتازة والتطبيق سهل الاستخدام. حصلت على التذكرة التي أبحث عنها بسرعة وبدون أي مشاكل."
+                    </p>
+                  </blockquote>
+                  <h3>محمد الغامدي:
+                                    </h3>
+                </figcaption>
+              </figure>
+              <figure class="snip1533">
+                <figcaption>
+                  <blockquote>
+                    <p>"أعجبتني المصداقية وسرعة إرسال التذاكر بعد الدفع. سأتعامل معهم بالتأكيد في المرات القادمة."
+                    </p>
+                  </blockquote>
+                  <h3>ريم العتيبي:
+                </h3>
+                </figcaption>
+              </figure>
+        </div>
+
     
         <script>
             // إعداد Firebase
@@ -702,9 +816,9 @@
                    
                 </section>
                 <section>
-                    <div class="image">
+                    <!-- <div class="image">
                         <img src="https://images.ctfassets.net/vy53kjqs34an/3zOlXwzG8mnkgOFKwogIjR/dc2926e1903ec6502be10e06b8c2f19b/webook-logo.svg" alt="Golden logo" />
-                    </div>
+                    </div> -->
                    
                 </section>
                 <section>
